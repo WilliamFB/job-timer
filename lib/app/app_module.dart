@@ -1,15 +1,19 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:job_timer/app/core/database/database.dart';
 import 'package:job_timer/app/modules/login/login_module.dart';
 import 'package:job_timer/app/modules/splash/splash_page.dart';
 import 'package:job_timer/app/services/auth_service_impl.dart';
 
+import 'core/database/database_impl.dart';
 import 'modules/home/home_module.dart';
 import 'services/auth_service.dart';
 
 class AppModule extends Module {
   @override
-  List<Bind> get binds =>
-      [Bind.lazySingleton<AuthService>((i) => AuthServiceImpl())];
+  List<Bind> get binds => [
+        Bind.lazySingleton<AuthService>((i) => AuthServiceImpl()),
+        Bind.lazySingleton<Database>((i) => DatabaseImpl()),
+      ];
 
   @override
   List<ModularRoute> get routes => [
