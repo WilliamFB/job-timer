@@ -25,6 +25,7 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
             SizedBox(
               width: constraints.maxWidth * .5,
               child: DropdownButtonFormField<ProjectStatus>(
+                value: ProjectStatus.emAndamento,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
@@ -38,15 +39,20 @@ class HeaderProjectsMenu extends SliverPersistentHeaderDelegate {
                       ),
                     )
                     .toList(),
-                onChanged: (value) {},
+                onChanged: (status) {
+                  if (status != null) {
+                    controller.filter(status);
+                  }
+                },
               ),
             ),
             SizedBox(
               width: constraints.maxWidth * .4,
               child: ElevatedButton.icon(
                   onPressed: () async {
+                    // Espera eu voltar da tela de register para fazer o loadProject
                     await Modular.to.pushNamed('/project/register');
-                    controller.loadProject();
+                    controller.loadProjects();
                   },
                   icon: const Icon(Icons.add),
                   label: const Text('Novo Projeto')),

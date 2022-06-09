@@ -1,6 +1,7 @@
 import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:job_timer/app/core/ui/button_with_loader.dart';
 import 'package:validatorless/validatorless.dart';
 
 import 'controller/project_register_controller.dart';
@@ -85,7 +86,11 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                   SizedBox(
                     width: MediaQuery.of(context).size.width,
                     height: 50,
-                    child: ElevatedButton(
+                    child: ButtonWithLoader<ProjectRegisterController,
+                        ProjectRegisterStatus>(
+                      bloc: widget.controller,
+                      selector: (state) =>
+                          state == ProjectRegisterStatus.loading,
                       onPressed: () async {
                         final formValid =
                             _formKey.currentState?.validate() ?? false;
@@ -96,7 +101,7 @@ class _ProjectRegisterPageState extends State<ProjectRegisterPage> {
                           await widget.controller.register(name, estimate);
                         }
                       },
-                      child: const Text('Salvar'),
+                      label: 'Salvar',
                     ),
                   ),
                 ],
