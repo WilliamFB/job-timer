@@ -23,12 +23,18 @@ class AppConfigUI {
       inputDecorationTheme: const InputDecorationTheme(
           border: OutlineInputBorder(),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
           ),
-          labelStyle: TextStyle(color: Colors.black)),
+          labelStyle: TextStyle(
+            color: Colors.black,
+          )),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(

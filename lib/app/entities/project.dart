@@ -15,5 +15,6 @@ class Project {
   @ProjectStatusConverter()
   late ProjectStatus status;
 
+  late int estimate;
   final tasks = IsarLinks<ProjectTask>();
 }
