@@ -22,9 +22,10 @@ class HomePage extends StatelessWidget {
         }
       },
       child: Scaffold(
-        drawer: const Drawer(
+        drawer: Drawer(
           child: SafeArea(
               child: ListTile(
+            onTap: controller.logout,
             title: Text('Sair'),
           )),
         ),
@@ -64,11 +65,10 @@ class HomePage extends StatelessWidget {
                 selector: (state) => state.projects,
                 builder: (context, projects) {
                   return SliverList(
-                      delegate: SliverChildListDelegate(projects
-                          .map(
-                            (project) => ProjectTile(projectModel: project),
-                          )
-                          .toList()));
+                      delegate: SliverChildBuilderDelegate(
+                          (context, index) =>
+                              ProjectTile(projectModel: projects[index]),
+                          childCount: projects.length));
                 },
               )
             ],

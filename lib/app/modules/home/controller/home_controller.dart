@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:job_timer/app/services/auth/auth_service.dart';
 
 import '../../../entities/project_status.dart';
 import '../../../services/projects/projects_service.dart';
@@ -10,10 +11,14 @@ import '../../../view_models/project_model.dart';
 part 'home_state.dart';
 
 class HomeController extends Cubit<HomeState> {
+  final AuthService _authService;
   final ProjectsService _projectService;
 
-  HomeController({required ProjectsService projectService})
-      : _projectService = projectService,
+  HomeController(
+      {required AuthService authService,
+      required ProjectsService projectService})
+      : _authService = authService,
+        _projectService = projectService,
         super(HomeState.initial());
 
   Future<void> loadProjects() async {
@@ -53,4 +58,6 @@ class HomeController extends Cubit<HomeState> {
       filter(ProjectStatus.emAndamento);
     }
   }
+
+  void logout() => _authService.signOut();
 }

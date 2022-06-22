@@ -6,8 +6,10 @@ import 'controller/home_controller.dart';
 
 class HomeModule extends Module {
   @override
-  List<Bind> get binds =>
-      [BlocBind.lazySingleton((i) => HomeController(projectService: i()))];
+  List<Bind> get binds => [
+        BlocBind.lazySingleton(
+            (i) => HomeController(authService: i(), projectService: i()))
+      ];
 
   @override
   List<ModularRoute> get routes => [
