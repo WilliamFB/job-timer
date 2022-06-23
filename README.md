@@ -6,9 +6,9 @@
 <p align="center">Nele é possível criar projetos adicionando uma estimativa de tempo. Dentro de cada projeto o usuário pode adicionar as tarefas que já foram concluídas.</p>
 
 <p align="center">
- <a href="#rodando-a-aplicação">Rodando a aplicação</a> •
- <a href="#tecnologias">Tecnologias</a> •
- <a href="#licença">Licença</a>
+ <a href="#💻-rodando-a-aplicação">Rodando a aplicação</a> •
+ <a href="#🚀-tecnologias">Tecnologias</a> •
+ <a href="#📝-licença">Licença</a>
 </p>
 
 ---
@@ -51,7 +51,7 @@ $ flutter pub run build_runner clean
 ---
 
 ## 📝 Licença
-Projeto sob a licença MIT, para mais detalhes veja o arquivo [LICENSE](LICENSE).
+Projeto sob a licença MIT, para mais detalhes veja o arquivo [LICENSE](LICENSE.md).
 
 ---
 
