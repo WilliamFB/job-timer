@@ -2,13 +2,14 @@
   <img alt="Timer" title="Timer" src="assets\images\logo.png" height="180"/>
 </h1>
 
-<p align="center">Aplicativo desenvolvido em Flutter. Sua principal finalidade é o gerenciamento de tempo dentro de um projeto.</p>
-<p align="center">Nele é possível criar projetos adicionando uma estimativa de tempo. Dentro de cada projeto o usuário pode adicionar as tarefas que já foram concluídas.</p>
+<p align="center">A Flutter app built with Bloc, Modular, Isar and Firebase. Its main feature is the time management in a project.</p>
+<p align="center">The user can create projects with a time estimate. In each project it's possible to add the completed tasks.</p>
 
 <p align="center">
- <a href="#-rodando-a-aplicação">Rodando a aplicação</a> •
- <a href="#-tecnologias">Tecnologias</a> •
- <a href="#-licença">Licença</a>
+ <a href="#-firebase">Firebase</a> •
+ <a href="#-running-the-app">Running the app</a> •
+ <a href="#-technologies">Technologies</a> •
+ <a href="#-license">License</a>
 </p>
 
 ---
@@ -17,25 +18,44 @@
   <img alt="JobTimer" title="JobTimer" src="./github/jobtimer.gif" height="500" />
 </h1>
 
-## 💻 Rodando a aplicação
+## 🔥 Firebase
 
 ```bash
-# Baixar os packages
+# Configure the Firebase CLI and FlutterFire CLI
+https://firebase.google.com/docs/flutter/setup?hl=pt-br&platform=android
+
+# Create a Firebase project (you can use the Firebase console or de CLI)
+# Execute the following command in your project folder to create a new Firebase project or to select an existing one
+$ flutterfire configure
+
+# Add the e-mail/password and the Google login options in the Firebase console
+
+# Make sure you add your SHA1 to the Firebase project
+# The following command will show your SHA1
+$ keytool -list -v -keystore C:\Users\William\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+```
+
+---
+
+## 💻 Running the app
+
+```bash
+# Packages download
 $ flutter pub get
 
-# Gerar arquivos .g
+# Generate .g files
 $ flutter pub run build_runner build --delete-conflicting-outputs
 
-# Para que a atualização dos arquivos .g seja feita automaticamente, utilize o watch
+# To update .g files automatically
 $ flutter pub run build_runner watch --delete-conflicting-outputs
 
-# Para limpar arquivos .g desatualizados
+# To clean the outdated .g files
 $ flutter pub run build_runner clean
 ```
 
 ---
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 - [Dart](https://dart.dev/)
 - [Flutter](https://flutter.dev/)
 - [Bloc](https://pub.dev/packages/flutter_bloc)
@@ -50,8 +70,8 @@ $ flutter pub run build_runner clean
 
 ---
 
-## 📝 Licença
-Projeto sob a licença MIT, para mais detalhes veja o arquivo [LICENSE](LICENSE.md).
+## 📝 License
+Project under MIT license, for more details go to the following file: [LICENSE](LICENSE.md).
 
 ---
 
