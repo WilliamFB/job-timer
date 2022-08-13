@@ -13,5 +13,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(ModularApp(module: AppModule(), child: const AppWidget()));
+  runApp(
+    ModularApp(
+      module: AppModule(),
+      child: const AppWidget(),
+    ),
+  );
 }
